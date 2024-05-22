@@ -3,18 +3,18 @@ import HighlightText from '../HomePage/HighlightText'
 
 const Quote = () => {
   return (
-    <div className=" text-xl md:text-4xl font-semibold mx-auto py-5 pb-20 text-center text-white">
-       We're dedicated to revolutionizing the way you shop. Our advanced platform  
-        <HighlightText text={"merges technology"} />,{" "}
+    <div className=" text-xl md:text-3xl font-medium mx-auto py-5 pb-20 text-center text-white">
+       Transforming aviation maintenance with advanced solutions for safer, more efficient flights. Our platform
+        <HighlightText text={"simplifies maintenance tasks"} />,{" "}
         <span className="bg-gradient-to-b from-[#FF512F] to-[#F09819] text-transparent bg-clip-text font-bold">
             {" "}
-            expertise
+            ensuring aircraft are always in top condition.
         </span>
-        , and community insights to provide an 
+        Experience hassle-free operations with our user-friendly tools,
         
         <span className="bg-gradient-to-b from-[#E65C00] to-[#F9D423] text-transparent bg-clip-text font-bold">
             {" "}
-            unmatched shopping experience.
+            making aircraft maintenance easier and more effective for airlines worldwide.
         </span> 
     </div>
   )

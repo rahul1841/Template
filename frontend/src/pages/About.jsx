@@ -1,9 +1,9 @@
 import React from "react"
 
 import FoundingStory from "../assets/Images/FoundingStory.png"
-import BannerImage1 from "../assets/Images/aboutus1.webp"
-import BannerImage2 from "../assets/Images/aboutus2.webp"
-import BannerImage3 from "../assets/Images/aboutus3.webp"
+import BannerImage1 from "../assets/Images/damag1.jpg"
+import BannerImage2 from "../assets/Images/damage22.jpg"
+import BannerImage3 from "../assets/Images/damage33.jpg"
 
 import Footer from "../components/common/Footer"
 import ContactFormSection from "../components/core/AboutPage/ContactFormSection"
@@ -33,8 +33,8 @@ const About = () => {
               initial='hidden'
               whileInView={'show'}
               viewport={{ once: false, amount: 0.1 }}
-            >Revolutionizing Reviews for Informed Choices in 
-              <HighlightText text={"Online Shopping"} />
+            >Aircraft Maintenance
+              <HighlightText text={"Optimization Platform"} />
             </motion.p>
 
             <motion.p
@@ -42,11 +42,8 @@ const About = () => {
               initial='hidden'
               whileInView={'show'}
               viewport={{ once: false, amount: 0.1 }}
-              className="mx-auto mt-3 text-center text-base font-medium  lg:w-[95%]">
-              WebMine leads the way in revolutionizing online review aggregation. 
-              We're dedicated to shaping a brighter shopping experience by curating 
-              diverse insights, harnessing advanced algorithms, and fostering an 
-              engaged consumer community.
+              className="mx-auto mt-5 text-center text-base font-medium  lg:w-[95%]">
+              Elevating aviation maintenance with innovative solutions for enhanced efficiency, safety, and reliability in every flight. Experience the future of maintenance today."
             </motion.p>
           </motion.header>
 
@@ -80,20 +77,10 @@ const About = () => {
                 Our Founding Story
               </h1>
               <p className="text-base font-medium text-richblack-300 lg:w-[95%]">
-              Our product review platform emerged from a shared
-                vision to redefine the shopping experience. It 
-                originated from a collaboration of tech enthusiasts,
-                analysts, and avid consumers who recognized the need for
-                transparent, informative, and reliable product insights
-                in today's digital marketplace.
+              Our journey began with a simple yet powerful idea: to revolutionize aircraft maintenance. Fueled by a passion for innovation and a commitment to safety, we set out to create a platform that would redefine how airlines approach maintenance challenges. With dedication and perseverance, we transformed this vision into reality, offering cutting-edge solutions that empower airlines to optimize their operations and enhance safety standards.
               </p>
               <p className="text-base font-medium text-richblack-300 lg:w-[95%]">
-              With firsthand experience as consumers, we understood the 
-              challenges of navigating the vast online market. We believed 
-              in breaking down barriers and providing shoppers with access 
-              to unbiased and comprehensive product reviews. Our platform 
-              aims to empower consumers to make informed purchasing decisions, 
-              ensuring satisfaction and confidence in their choices.
+              Today, we continue to push the boundaries of what's possible, driven by our founding mission to make air travel safer and more efficient for everyone.
               </p>
             </motion.div>
 
@@ -117,12 +104,7 @@ const About = () => {
                 Our Vision
               </h1>
               <p className="text-base font-medium text-richblack-300 lg:w-[95%]">
-              With a resolute objective to deepen customer insights and 
-              foster informed decision-making, our dedicated team embarked 
-              on the creation of a sophisticated platform. Through meticulous 
-              curation and extraction of valuable reviews, we aim to empower 
-              shoppers with comprehensive product knowledge, enriching their 
-              shopping journey and satisfaction.
+              Our vision is to lead the way in transforming aircraft maintenance into a seamless and proactive process, where potential issues are anticipated and addressed before they escalate. We strive to create a future where airlines can rely on advanced data analytics and predictive maintenance techniques to optimize their operations, minimize downtime, and maximize safety. By pioneering innovative solutions and fostering a culture of continuous improvement, we aim to shape the future of aviation maintenance and contribute to a safer and more sustainable industry for generations to come.
               </p>
             </div>
 
@@ -131,11 +113,7 @@ const About = () => {
                 Our Mission
               </h1>
               <p className="text-base font-medium text-richblack-300 lg:w-[95%]">
-              Our mission transcends conventional review platforms. We aim 
-              to cultivate a dynamic community of shoppers, encouraging 
-              connection, collaboration, and shared insights. Through our 
-              platform, we facilitate dialogue, exchange of experiences, 
-              and networking opportunities, enriching the shopping journey.</p>
+              To set new standards in aircraft maintenance, ensuring the highest levels of safety and efficiency for the aviation industry. We're committed to leveraging advanced technology and expertise to deliver innovative solutions that empower airlines to maintain their fleets with precision and confidence. Through our dedication to excellence, we aim to enhance the reliability and sustainability of air travel worldwide, safeguarding the well-being of passengers and crew alike.</p>
             </div>
           </div>
         </div>

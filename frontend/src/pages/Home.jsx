@@ -18,17 +18,17 @@ import { motion } from 'framer-motion'
 import { fadeIn, } from './../components/common/motionFrameVarients';
 
 // background random images
-import backgroundImg1 from '../assets/Images/random bg img/coding bg1.jpg'
-import backgroundImg2 from '../assets/Images/random bg img/coding bg2.jpg'
-import backgroundImg3 from '../assets/Images/random bg img/coding bg3.jpg'
-import backgroundImg4 from '../assets/Images/random bg img/coding bg4.jpg'
-import backgroundImg5 from '../assets/Images/random bg img/coding bg5.jpg'
-import backgroundImg6 from '../assets/Images/random bg img/coding bg6.jpeg'
-import backgroundImg7 from '../assets/Images/random bg img/coding bg7.jpg'
-import backgroundImg8 from '../assets/Images/random bg img/coding bg8.jpeg'
-import backgroundImg9 from '../assets/Images/random bg img/coding bg9.jpg'
-import backgroundImg10 from '../assets/Images/random bg img/coding bg10.jpg'
-import backgroundImg111 from '../assets/Images/random bg img/coding bg11.jpg'
+import backgroundImg1 from '../assets/Images/Airplanes/a1.jpeg.jpg'
+import backgroundImg2 from '../assets/Images/Airplanes/a2.jpg'
+import backgroundImg3 from '../assets/Images/Airplanes/a3.jpg'
+import backgroundImg4 from '../assets/Images/Airplanes/a4.jpg'
+import backgroundImg5 from '../assets/Images/Airplanes/a5.jpg'
+import backgroundImg6 from '../assets/Images/Airplanes/12.jpg'
+import backgroundImg7 from '../assets/Images/Airplanes/a7.jpg'
+import backgroundImg8 from '../assets/Images/Airplanes/a8.jpg'
+import backgroundImg9 from '../assets/Images/Airplanes/a9.jpg'
+import backgroundImg10 from '../assets/Images/Airplanes/a10.jpg'
+import backgroundImg111 from '../assets/Images/Airplanes/a11.jpg'
 
 
 const randomImges = [
@@ -89,7 +89,7 @@ const Home = () => {
                                         transition-all duration-200 hover:scale-95 w-fit'>
                             <div className='flex flex-row items-center gap-2 rounded-full px-10 py-[5px]
                               transition-all duration-200 group-hover:bg-richblack-900'>
-                                <p>Become an Instructor</p>
+                                <p>Search Your Airline </p>
                                 <FaArrowRight />
                             </div>
                         </div>
@@ -103,8 +103,8 @@ const Home = () => {
                         viewport={{ once: false, amount: 0.1 }}
                         className='text-center text-3xl lg:text-4xl font-semibold mt-7  '
                     >
-                        Empower Your Future with
-                        <HighlightText text={"Coding Skills"} />
+                         Enhance Safety with  
+                        <HighlightText text={"Optimal Repairs."} />
                     </motion.div>
 
                     <motion.div
@@ -114,7 +114,7 @@ const Home = () => {
                         viewport={{ once: false, amount: 0.1 }}
                         className=' mt-4 w-[90%] text-center text-base lg:text-lg font-bold text-richblack-300'
                     >
-                        With our online coding courses, you can learn at your own pace, from anywhere in the world, and get access to a wealth of resources, including hands-on projects, quizzes, and personalized feedback from instructors.
+                       Empower your airline's safety standards with expert wire routing tips and instant solutions. Our cutting-edge platform offers actionable insights to fortify your maintenance protocols and ensure seamless operations, safeguarding both passengers and crew.
                     </motion.div>
 
 
@@ -137,13 +137,13 @@ const Home = () => {
                             position={"lg:flex-row"}
                             heading={
                                 <div className='text-3xl lg:text-4xl font-semibold'>
-                                    Unlock Your
-                                    <HighlightText text={"coding potential "} />
-                                    with our online courses
+                                    Access  
+                                    <HighlightText text={"tailored recommendations "} />
+                                    for optimal maintenance solutions.
                                 </div>
                             }
                             subheading={
-                                "Our courses are designed and taught by industry experts who have years of experience in coding and are passionate about sharing their knowledge with you."
+                                "Unlock precision-guided maintenance insights for seamless operations. Elevate safety and efficiency with our targeted solutions."
                             }
                             ctabtn1={
                                 {
@@ -154,16 +154,17 @@ const Home = () => {
                             }
                             ctabtn2={
                                 {
-                                    btnText: "learn more",
+                                    btnText: "Know more",
                                     linkto: "/login",
                                     active: false,
                                 }
                             }
 
-                            codeblock={`<<!DOCTYPE html>\n<html>\n<head><title>Example</title>\n</head>\n<body>\n<h1><ahref="/">Header</a>\n</h1>\n<nav><ahref="one/">One</a><ahref="two/">Two</a><ahref="three/">Three</a>\n</nav>`}
+                            codeblock={`There's a wire fault in the airplane engine.\n\nFirst, ensure safety protocols. Then, conduct a thorough inspection.\n\nWhat can be done?\n\nRepair or replace damaged wires immediately.\n\nWhat else?`}
                             codeColor={"text-yellow-25"}
                             backgroundGradient={"code-block1-grad"}
                         />
+
                     </div>
 
 
@@ -173,25 +174,25 @@ const Home = () => {
                             position={"lg:flex-row-reverse"}
                             heading={
                                 <div className="w-[100%] text-3xl lg:text-4xl font-semibold lg:w-[50%]">
-                                    Start
-                                    <HighlightText text={"coding in seconds"} />
+                                    Comprehensive analysis of 
+                                    <HighlightText text={"fault consequences"} />
                                 </div>
                             }
                             subheading={
-                                "Go ahead, give it a try. Our hands-on learning environment means you'll be writing real code from your very first lesson."
+                                "Through meticulous damage analysis, we assess the severity of faults and their potential effects, enabling you to make informed decisions for maintenance and repair."
                             }
                             ctabtn1={{
-                                btnText: "Continue Lesson",
+                                btnText: "try it yourself",
                                 link: "/signup",
                                 active: true,
                             }}
                             ctabtn2={{
-                                btnText: "Learn More",
+                                btnText: "Know More",
                                 link: "/signup",
                                 active: false,
                             }}
                             codeColor={"text-white"}
-                            codeblock={`import React from "react";\n import CTAButton from "./Button";\nimport TypeAnimation from "react-type";\nimport { FaArrowRight } from "react-icons/fa";\n\nconst Home = () => {\nreturn (\n<div>Home</div>\n)\n}\nexport default Home;`}
+                            codeblock={`I think the plane's damaged. Help?\n\nSure. What's wrong?\n\nWings are worn, engine sounds odd.\n\nGot it. We'll check visually first\n\nWhat next?\n\nDetailed analysis using advanced tools.`}
                             backgroundGradient={"code-block2-grad"}
                         />
                     </div>
@@ -255,10 +256,6 @@ const Home = () => {
                 <div className='mt-14 w-11/12 mx-auto max-w-maxContent flex-col items-center justify-between gap-8 first-letter bg-richblack-900 text-white'>
                     <InstructorSection />
 
-                    {/* Reviws from Other Learner */}
-                    <h1 className="text-center text-3xl lg:text-4xl font-semibold mt-8 flex justify-center items-center gap-x-3">
-                        Reviews from other learners <MdOutlineRateReview className='text-yellow-25' />
-                    </h1>
                 </div>
 
                 {/*Footer */}

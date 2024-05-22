@@ -142,13 +142,13 @@ function App() {
         </Route>
 
       {/* Main page route (scrapper) (404 Page ) */}
-       <Route path="scrape" element={
+       <Route path="trace" element={
                   <ProtectedRoute>
                   <Scrape />
                 </ProtectedRoute>
        } />
 
-       <Route path="scrape/analysis" element={
+       <Route path="trace/analysis" element={
                   <ProtectedRoute>
                   <Analysis />
                 </ProtectedRoute>

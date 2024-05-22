@@ -48,14 +48,14 @@ const Navbar = () => {
                 <ul className='hidden sm:flex gap-x-6 text-richblack-25'>
                     {NavbarLinks.map((link, index) => (
                         <li key={index}>
-                            {link.title === 'Scrape' && token ? (
+                            {link.title === 'Trace' && token ? (
                                 <Link to={link.path}>
                                     <p className={`${matchRoute(link.path) ? 'bg-yellow-25 text-black' : 'text-richblack-25'} rounded-xl p-1 px-3 `}>
                                         {link.title}
                                     </p>
                                 </Link>
                             ) : null}
-                            {link.title !== 'Scrape' && (
+                            {link.title !== 'Trace' && (
                                 <Link to={link.path}>
                                     <p className={`${matchRoute(link.path) ? 'bg-yellow-25 text-black' : 'text-richblack-25'} rounded-xl p-1 px-3 `}>
                                         {link.title}

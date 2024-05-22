@@ -4,16 +4,16 @@ import Card from "./Card"; // Ensure this path correctly leads to your Card comp
 const ExploreMore = () => {
   const [courses, setCourses] = useState([
     {
-      heading: "Data Harvesting",
-      description: "WebMine efficiently extracts relevant information from various online sources, enabling users to gather valuable insights and stay informed about market trends, competitor activities, and customer preferences.",
+      heading: "Wire Routing",
+      description: "Boost your airline's safety and efficiency with cutting-edge wire routing solutions and expert tips. Discover how our advanced platform can streamline your maintenance and enhance operational reliability.",
     },
     {
-      heading: "Targeted Prospecting",
-      description: "Utilizing advanced algorithms, WebMine helps users identify and target their ideal audience with precision, facilitating more effective lead generation and customer acquisition strategies.",
+      heading: "Recommendation",
+      description: "Our platform provides tailored recommendations based on precise wire damage analysis. Receive optimal repair routing solutions to ensure efficient maintenance, reduced downtime, and enhanced aircraft safety.",
     },
     {
-      heading: "Seamless Integration",
-      description: "WebMine seamlessly integrates with existing sales and marketing tools, allowing for centralized data management and streamlined workflows. This ensures a cohesive approach to business operations and maximizes productivity across teams.",
+      heading: "Damage Analyse",
+      description: "Our platform offers advanced damage analysis, accurately identifying and assessing wire damage in your aircraft. Using state-of-the-art technology, we determine the extent and precise location of the damage, enabling targeted and efficient repair recommendations to minimize downtime and enhance safety.",
     }
   ]);
 

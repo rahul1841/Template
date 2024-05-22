@@ -135,7 +135,7 @@ function Analysis() {
                 <div className="flex justify-center m-4">
     <button
         className="bg-blue-500 text-white py-2 px-4 rounded-md focus:outline-none hover:bg-blue-600 mr-4"
-        onClick={() => navigate('/scrape')}
+        onClick={() => navigate('/trace')}
     >
         Back to Scrape
     </button>

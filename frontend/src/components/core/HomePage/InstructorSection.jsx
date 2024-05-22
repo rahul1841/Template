@@ -31,17 +31,17 @@ const InstructorSection = () => {
         <div className='lg:w-[50%] flex flex-col'>
           <div className='text-3xl lg:text-4xl font-semobold w-[50%] mb-2'>
             Become an
-            <HighlightText text={"Instructor"} />
+            <HighlightText text={"Advisor"} />
           </div>
 
           <p className='font-medium text-[16px] w-[80%] text-richblack-300 mb-12'>
-            Instructors from around the world teach millions of students on EduGlow. We provide the tools and skills to teach what you love.
+          "Embark on a Journey as an Esteemed Advisor and Influence the Course of Aviation Innovation and Progress.
           </p>
 
           <div className='w-fit'>
             <CTAButton active={true} linkto={"/signup"}>
               <div className='flex flex-row gap-2 items-center'>
-                Start Learning Today
+                Start Advising
                 <FaArrowRight />
               </div>
             </CTAButton>

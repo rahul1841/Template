@@ -4,8 +4,8 @@ export const NavbarLinks = [
     path: "/",
   },
   {
-    title: "Scrape",
-    path: "/scrape",
+    title: "Trace",
+    path: "/trace",
   },
   {
     title: "About Us",

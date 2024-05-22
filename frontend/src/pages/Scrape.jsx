@@ -1,14 +1,67 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import HighlightText from '../components/core/HomePage/HighlightText';
 import { fadeIn } from '../components/common/motionFrameVarients';
 import Footer from '../components/common/Footer';
-import { SearchIcon } from '@heroicons/react/outline';
+import { UploadIcon } from '@heroicons/react/outline';
+import { useNavigate } from 'react-router-dom';
 
 function Main() {
+    const [selectedFile, setSelectedFile] = useState(null);
+    const [fileUploaded, setFileUploaded] = useState(false);
+    const [categoryData, setCategoryData] = useState(null);
+    const [analysisData, setAnalysisData] = useState(null);
+
+    const navigate = useNavigate();
+
+    const handleFileChange = (event) => {
+        setSelectedFile(event.target.files[0]);
+        setFileUploaded(false);  // Reset the state if a new file is selected
+    };
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        if (!selectedFile) {
+            alert('Please select a file to upload');
+            return;
+        }
+
+        const formData = new FormData();
+        formData.append('file', selectedFile);
+
+        try {
+            const response = await fetch('http://localhost:8080/upload', {
+                method: 'POST',
+                body: formData,
+            });
+            const result = await response.json();
+            console.log('File uploaded successfully:', result);
+            setFileUploaded(true);
+        } catch (error) {
+            console.error('Error uploading file:', error);
+        }
+    };
+
+    const getCategory = async () => {
+        try {
+            const response = await fetch('http://localhost:8000/get-category', {
+                method: 'GET',
+            });
+            const result = await response.json();
+            setCategoryData(result);
+            console.log('Category data:', result);
+        } catch (error) {
+            console.error('Error fetching category data:', error);
+        }
+    };
+
+    const handleAnalysisClick = () => {
+        navigate('/trace/analysis');
+    };
+
     return (
         <React.Fragment>
-            <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
+            <div className='container mx-auto px-4 sm:px-6 lg:px-8 pb-2'>
                 <motion.div
                     variants={fadeIn('left', 0.1)}
                     initial='hidden'
@@ -27,47 +80,85 @@ function Main() {
                     viewport={{ once: false, amount: 0.1 }}
                     className='mt-4 w-full text-center text-base lg:text-lg font-bold text-richblack-300'
                 >
-                    Discover valuable insights from any webpage Enter the URL below to uncover a wealth of information.
+                    Upload an image to get insights. Enter the URL below to uncover a wealth of information.
                 </motion.div>
                 
-                <form className='mt-8 flex flex-col md:flex-row items-center'>
-                    <div className="relative flex w-full md:w-auto md:flex-1">
-                        <input
-                            type='text'
-                            placeholder='Enter URL for Scrapping the Customer Reviews'
-                            className='border border-gray-400 rounded-l-sm rounded-r-md py-2 px-4 mr-0 focus:outline-none focus:border-blue-500 flex-1 bg-transparent text-white placeholder-gray-300'
-                            style={{ minWidth: '0' }} // Remove the fixed minWidth
-                        />
-                        <button type='submit' className='absolute inset-y-0 right-0 bg-blue-500 text-white py-2 px-4 rounded-r-sm rounded-l-none focus:outline-none hover:bg-blue-600 flex items-center justify-center'>
-                            <SearchIcon className="h-5 w-5" />
-                        </button>
+                <form className='mt-8 flex flex-col items-center' onSubmit={handleSubmit}>
+                    <div 
+                        className='relative flex flex-col items-center w-full md:w-auto md:flex-1 border-2 border-dashed border-blue-500 p-6 rounded-md bg-gray-100'
+                        style={{ width: '38%' }} // Ensure the width is consistent
+                        onDragOver={(e) => e.preventDefault()}
+                        onDrop={(e) => {
+                            e.preventDefault();
+                            const files = e.dataTransfer.files;
+                            if (files.length) {
+                                setSelectedFile(files[0]);
+                                setFileUploaded(false);  // Reset the state if a new file is dropped
+                            }
+                        }}
+                    >
+                        <UploadIcon className="h-10 w-10 text-blue-500 mb-4" />
+                        {selectedFile ? (
+                            <div className='text-center'>
+                                <img src={URL.createObjectURL(selectedFile)} alt={selectedFile.name} className="mb-2 w-32 h-32 object-cover" />
+                                <p>{selectedFile.name}</p>
+                                <p className="text-sm">{(selectedFile.size / 1024).toFixed(2)} KB</p>
+                            </div>
+                        ) : (
+                            <div className="text-center text-gray-500">
+                                <p>Drop your images here or <span className="text-blue-500 cursor-pointer" onClick={() => document.getElementById('fileInput').click()}>browse</span>.</p>
+                                <button
+                                    type='button'
+                                    onClick={() => document.getElementById('fileInput').click()}
+                                    className='mt-4 bg-blue-500 text-white py-2 px-4 rounded-md focus:outline-none hover:bg-blue-600'
+                                >
+                                    Select Image
+                                </button>
+                                <input
+                                    id='fileInput'
+                                    type='file'
+                                    accept='image/*'
+                                    onChange={handleFileChange}
+                                    className='hidden'
+                                />
+                            </div>
+                        )}
                     </div>
-                    <div className="relative mt-4 md:mt-0 md:ml-4">
-                        <select
-                            className="border border-gray-400 rounded-sm py-2 px-4 focus:outline-none focus:border-blue-500 bg-transparent text-white placeholder-gray-300"
-                        >
-                            <option value="amazon">Amazon</option>
-                            <option value="flipkart">Flipkart</option>
-                            <option value="myntra">Myntra</option>
-                            <option value="nykaa">Nykaa</option>
-                            <option value="walmart">Walmart</option>
-                        </select>
-                    </div>
-                </form>
 
-                <div className='mt-8 mb-28'>
-                    <div className='flex justify-between items-center mb-4'>
-                        <h2 className='font-semibold text-2xl text-yellow-100'>Reviews (0)</h2>
-                    </div>
-                </div>
-
-                <div className="flex justify-center m-4">
                     <button
-                        className="bg-blue-500 text-white py-2 px-4 rounded-md focus:outline-none hover:bg-blue-600"
+                        type='submit'
+                        className='mt-4 bg-blue-500 text-white py-2 px-4 rounded-md focus:outline-none hover:bg-blue-600 flex items-center justify-center'
+                        style={{ width: '38%' }} // Ensure the button width matches the input field width
+                    >
+                        Upload Image
+                    </button>
+                </form>
+                {/* {fileUploaded && ( */}
+                { (
+                <div className='mt-4 flex justify-center space-x-4' >
+                    <button
+                        onClick={getCategory}
+                        className='bg-yellow-500 text-white py-2  rounded-md focus:outline-none hover:bg-yellow-600 flex items-center justify-center'
+                        style={{ width: '18.5%' }}
+                    >
+                        Get Category
+                    </button>
+                    <button
+                        onClick={handleAnalysisClick}
+                        className='bg-yellow-500 text-white py-2  rounded-md focus:outline-none hover:bg-yellow-600 flex items-center justify-center'
+                        style={{ width: '18.5%' }}
                     >
                         Get Analysis
                     </button>
                 </div>
+            )}
+
+                {categoryData && (
+                    <div className='mt-4'>
+                        <h3 className='text-lg font-bold'>Category Data:</h3>
+                        <pre className='bg-gray-100 p-4 rounded-md'>{JSON.stringify(categoryData, null, 2)}</pre>
+                    </div>
+                )}
             </div>
 
             <Footer />

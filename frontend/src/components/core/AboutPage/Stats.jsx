@@ -1,34 +1,27 @@
 import React from "react";
 
 const Stats = [
-  { count: "4k", label: "Active Users" },
-  { count: "200+", label: "Review Scraped" },
-  { count: "10+", label: "Experts Available" },
-  { count: "15+", label: "Awards" },
+  { count: "500+", label: "Active Flights" },
+  { count: "2k+", label: "Faults Analysed" },
+  { count: "50+", label: "Experts Available" },
 ];
 
-const StatsComponenet = () => {
+const StatsComponent = () => {
   return (
     <div className="bg-richblack-700">
       {/* Stats */}
-      <div className="flex flex-col gap-10 justify-between w-11/12 max-w-maxContent text-white mx-auto ">
-        <div className="grid grid-cols-2 md:grid-cols-4 text-center">
-          {Stats.map((data, index) => {
-            return (
-              <div className="flex flex-col py-10" key={index}>
-                <h1 className="text-[30px] font-bold text-richblack-5">
-                  {data.count}
-                </h1>
-                <h2 className="font-semibold text-[16px] ">
-                  {data.label}
-                </h2>
-              </div>
-            );
-          })}
+      <div className="flex justify-center text-white">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-60 max-w-maxContent mx-auto">
+          {Stats.map((data, index) => (
+            <div className="flex flex-col items-center py-10" key={index}>
+              <h1 className="text-4xl font-bold">{data.count}</h1>
+              <h2 className="font-semibold text-lg">{data.label}</h2>
+            </div>
+          ))}
         </div>
       </div>
     </div>
   );
 };
 
-export default StatsComponenet;
+export default StatsComponent;

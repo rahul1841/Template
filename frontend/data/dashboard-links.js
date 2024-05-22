@@ -8,8 +8,8 @@ export const sidebarLinks = [
   },
   {
     id: 2,
-    name: "Scrape",
-    path: "/scrape",
+    name: "Trace",
+    path: "/trace",
     icon: "VscRepoPush",
   },
   
